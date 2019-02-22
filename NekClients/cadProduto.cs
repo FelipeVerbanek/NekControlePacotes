@@ -69,7 +69,7 @@ namespace NekClients
 
 		private void btnSalvar_Click(object sender, EventArgs e)
 		{
-
+			string s = "teste";
 			produtos produtos = new produtos();
 			produtos.NomeProduto = txtProduto.Text;
 			produtos.ValorProduto = txtValor.Text;
