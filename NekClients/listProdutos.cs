@@ -94,5 +94,10 @@ namespace NekClients
 		{
 
 		}
+
+		private void listProdutos_Load(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

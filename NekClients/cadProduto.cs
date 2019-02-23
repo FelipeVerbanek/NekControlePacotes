@@ -69,24 +69,30 @@ namespace NekClients
 
 		private void btnSalvar_Click(object sender, EventArgs e)
 		{
+			produtos produtoss;
 
-			produtos produtos = new produtos();
-			produtos.NomeProduto = txtProduto.Text;
-			produtos.ValorProduto = txtValor.Text;
-			produtos.Categoria = (int) cbCategoria.SelectedValue;
-
-			Conexao conexao = new Conexao();
-			produtoDAL dal = new produtoDAL(conexao);
-			try { dal.insert(produtos);
-				MessageBox.Show("Produto cadastrado com sucesso!");
-			}
-			catch (Exception erro)
+			if (produtos.ValidaCampos(txtProduto.Text, txtValor.Text))
 			{
-				MessageBox.Show("Erro [" + erro + "]");
+
+				produtoss = new produtos(txtProduto.Text, txtValor.Text, (int)cbCategoria.SelectedValue);
+			
+
+				//produtos.NomeProduto = txtProduto.Text;
+				//produtos.ValorProduto = txtValor.Text;
+				//produtos.Categoria = (int) cbCategoria.SelectedValue;
+
+				Conexao conexao = new Conexao();
+				produtoDAL dal = new produtoDAL(conexao);
+				try { dal.insert(produtoss);
+					MessageBox.Show("Produto cadastrado com sucesso!");
+				}
+				catch (Exception erro)
+				{
+					MessageBox.Show("Erro [" + erro + "]");
+				}
 			}
 
 
-			
 		}
 
 		private void button1_Click(object sender, EventArgs e)
@@ -124,6 +130,16 @@ namespace NekClients
 		private void btnCancelar_Click(object sender, EventArgs e)
 		{
 			this.Close();
+		}
+
+		private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+		{
+
+		}
+
+		private void cbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

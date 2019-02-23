@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace NekClients {
 
@@ -29,21 +30,37 @@ namespace NekClients {
 
 		public string NomeProduto {
 			get { return this.nome; }
-			set { this.nome = value; }
+			private set { this.nome = value; }
 		}
 
 		public string ValorProduto {
 			get { return this.valor ; }
-			set { this.valor = value; }
+			private set { this.valor = value; }
 		}
 		public int Categoria {
 			get { return this.id_categoria; }
-			set { this.id_categoria = value; }
+			private set { this.id_categoria = value; }
 		}
 		public int Codigo
 		{
 			get { return this.codigo; }
 			set { this.codigo = value; }
+		}
+
+		public static bool ValidaCampos(string nomeProd, string valorProd)
+		{
+			if (String.IsNullOrWhiteSpace(nomeProd))
+			{
+				MessageBox.Show("Favor informe o nome do produto!");
+				return false;
+			}
+			if (String.IsNullOrWhiteSpace(valorProd))
+			{
+				MessageBox.Show("Favor informe o valor do produto!");
+				return false;
+			}
+
+			return true;
 		}
 
 	}
