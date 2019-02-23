@@ -52,10 +52,10 @@
     <Compile Include="cadProduto.Designer.cs">
       <DependentUpon>cadProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="class\Categoria.cs" />
+    <Compile Include="Entities\Categoria.cs" />
     <Compile Include="class\CategoriaProduto.cs" />
     <Compile Include="class\produtoDAL.cs" />
-    <Compile Include="class\Produtos.cs" />
+    <Compile Include="Entities\Produtos.cs" />
     <Compile Include="class\conexao.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
