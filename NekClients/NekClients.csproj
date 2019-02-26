@@ -46,38 +46,58 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="cadProduto.cs">
+    <Compile Include="classes\ServiceCliente.cs" />
+    <Compile Include="Entities\Clientes.cs" />
+    <Compile Include="view\cadProduto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="cadProduto.Designer.cs">
+    <Compile Include="view\cadProduto.Designer.cs">
       <DependentUpon>cadProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Entities\Categoria.cs" />
-    <Compile Include="class\CategoriaProduto.cs" />
-    <Compile Include="class\produtoDAL.cs" />
-    <Compile Include="Entities\Produtos.cs" />
-    <Compile Include="class\conexao.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="view\cadCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="view\cadCliente.Designer.cs">
+      <DependentUpon>cadCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Categoria.cs" />
+    <Compile Include="classes\CategoriaProduto.cs" />
+    <Compile Include="classes\produtoDAL.cs" />
+    <Compile Include="Entities\Produtos.cs" />
+    <Compile Include="classes\conexao.cs" />
+    <Compile Include="view\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="listProdutos.cs">
+    <Compile Include="view\listCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="listProdutos.Designer.cs">
+    <Compile Include="view\listCliente.Designer.cs">
+      <DependentUpon>listCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\listProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\listProdutos.Designer.cs">
       <DependentUpon>listProdutos.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="cadProduto.resx">
+    <EmbeddedResource Include="view\cadProduto.resx">
       <DependentUpon>cadProduto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="view\cadCliente.resx">
+      <DependentUpon>cadCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="listProdutos.resx">
+    <EmbeddedResource Include="view\listCliente.resx">
+      <DependentUpon>listCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\listProdutos.resx">
       <DependentUpon>listProdutos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

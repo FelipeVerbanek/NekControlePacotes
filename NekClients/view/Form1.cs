@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NekClients.view;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,6 +42,11 @@ namespace NekClients
 		private void btnSair_Click(object sender, EventArgs e)
 		{
 			Application.Exit();
+		}
+
+		private void BtnCliente_Click(object sender, EventArgs e)
+		{
+			AbrirFormInPanel(new listCliente());
 		}
 	}
 }

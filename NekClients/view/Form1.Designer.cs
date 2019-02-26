@@ -34,12 +34,14 @@
 			this.btnProduto = new System.Windows.Forms.Button();
 			this.btnHome = new System.Windows.Forms.Button();
 			this.panelCentral = new System.Windows.Forms.Panel();
+			this.BtnCliente = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.panel1.Controls.Add(this.BtnCliente);
 			this.panel1.Controls.Add(this.btnSair);
 			this.panel1.Controls.Add(this.btnProduto);
 			this.panel1.Controls.Add(this.btnHome);
@@ -98,6 +100,20 @@
 			this.panelCentral.Size = new System.Drawing.Size(638, 454);
 			this.panelCentral.TabIndex = 1;
 			// 
+			// BtnCliente
+			// 
+			this.BtnCliente.FlatAppearance.BorderSize = 0;
+			this.BtnCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.BtnCliente.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.BtnCliente.ForeColor = System.Drawing.Color.AliceBlue;
+			this.BtnCliente.Location = new System.Drawing.Point(0, 152);
+			this.BtnCliente.Name = "BtnCliente";
+			this.BtnCliente.Size = new System.Drawing.Size(176, 49);
+			this.BtnCliente.TabIndex = 6;
+			this.BtnCliente.Text = "Cliente";
+			this.BtnCliente.UseVisualStyleBackColor = true;
+			this.BtnCliente.Click += new System.EventHandler(this.BtnCliente_Click);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,6 +138,7 @@
 		private System.Windows.Forms.Button btnSair;
 		private System.Windows.Forms.Button btnProduto;
 		public System.Windows.Forms.Panel panelCentral;
+		private System.Windows.Forms.Button BtnCliente;
 	}
 }
 
