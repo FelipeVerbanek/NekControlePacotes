@@ -47,7 +47,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="classes\ServiceCliente.cs" />
+    <Compile Include="classes\ServiceEndereco.cs" />
     <Compile Include="Entities\Clientes.cs" />
+    <Compile Include="Entities\Endereco.cs" />
+    <Compile Include="view\CadEndereco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\CadEndereco.Designer.cs">
+      <DependentUpon>CadEndereco.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\cadProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +93,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="view\CadEndereco.resx">
+      <DependentUpon>CadEndereco.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\cadProduto.resx">
       <DependentUpon>cadProduto.cs</DependentUpon>
     </EmbeddedResource>
