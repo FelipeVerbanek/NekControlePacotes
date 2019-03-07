@@ -45,9 +45,6 @@ namespace NekClients
 			this._conexao.Close();
 		}
 
-		public static implicit operator SqlConnection(Conexao v)
-		{
-			throw new NotImplementedException();
-		}
+
 	}
 }

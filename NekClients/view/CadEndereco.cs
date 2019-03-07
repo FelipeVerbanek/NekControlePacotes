@@ -14,9 +14,17 @@ namespace NekClients.view
 {
 	public partial class CadEndereco : Form
 	{
-		public CadEndereco()
+		private int Id_cliente;
+
+		public CadEndereco(int id_cliente)
 		{
+			string nome;
+			ServiceEndereco servico = new ServiceEndereco();
+			this.Id_cliente = id_cliente;
+
 			InitializeComponent();
+			txtNome.Text = servico.RetornaNomeClient(id_cliente);
+			
 		}
 
 		private void btnSalvar_Click(object sender, EventArgs e)

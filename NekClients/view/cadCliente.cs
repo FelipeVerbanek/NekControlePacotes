@@ -9,11 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NekClients.classes;
+using NekClients.view;
 
 namespace NekClients
 {
 	public partial class Cliente : Form
 	{
+		public int Id_cliente = 0;
+
 		public Cliente()
 		{
 			InitializeComponent();
@@ -39,6 +42,8 @@ namespace NekClients
 				{
 					service.InsertClienteFisico(cliente);
 					MessageBox.Show("Cliente cadastrado com sucesso!");
+					this.Id_cliente = cliente.Id;
+
 				}
 				catch (Exception erro)
 				{
@@ -57,6 +62,19 @@ namespace NekClients
 				{
 					MessageBox.Show("Erro [" + erro + "]");
 				}
+			}
+		}
+
+		private void btnEndereco_Click(object sender, EventArgs e)
+		{
+			if (this.Id_cliente > 0)
+			{ 
+				CadEndereco cadEndereco = new CadEndereco(this.Id_cliente);
+				cadEndereco.Show();
+			}
+			else{
+				MessageBox.Show("Favor salve as informações antes de acessar o cadastro de endereço!");
+
 			}
 		}
 	}

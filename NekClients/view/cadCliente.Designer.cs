@@ -173,6 +173,7 @@
 			this.btnEndereco.TabIndex = 16;
 			this.btnEndereco.Text = "Cadastrar endereço";
 			this.btnEndereco.UseVisualStyleBackColor = false;
+			this.btnEndereco.Click += new System.EventHandler(this.btnEndereco_Click);
 			// 
 			// label3
 			// 

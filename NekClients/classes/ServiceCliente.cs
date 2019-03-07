@@ -50,38 +50,72 @@ namespace NekClients.classes
 
 			return LstCliente;
 		}
+
+		internal static string RetornaNomeClient(int id_cliente)
+		{
+			throw new NotImplementedException();
+		}
+
 		//INSERT DO CADASTRO DE CLIENTE
 		public void InsertClienteFisico(Clientes cliente)
 		{
+
+			cliente.Id = buscar_id();
 			SqlCommand cmd = new SqlCommand();
 
 			cmd.Connection = objConexao.ObjetoConexao;
-			cmd.CommandText = "insert into cliente (nome, cpf, data_nacimento, data_cadastro) values " +
-				"(@nome, @cpf, @data_nacimento, @data_cadastro);";
+			cmd.CommandText = "insert into cliente (id_cliente, nome, cpf, data_nacimento, data_cadastro) values " +
+				"(@id_cliente, @nome, @cpf, @data_nacimento, @data_cadastro);";
 			cmd.Parameters.AddWithValue("@nome", cliente.NomeCliente);
 			cmd.Parameters.AddWithValue("@cpf", cliente.Cpf);
 			cmd.Parameters.AddWithValue("@data_nacimento", cliente.DataNascimento);
 			cmd.Parameters.AddWithValue("@data_cadastro", cliente.DataCadastro);
+			cmd.Parameters.AddWithValue("@id_cliente", cliente.Id);
 			objConexao.Conectar();
 			cmd.ExecuteScalar();
 			objConexao.Desconectar();
 		}
 
+		//Autor: Felipe Verbanek
+		//Data: 06/03/2019
+		//insert client into database
 		public void InsertClienteJuridico(Clientes cliente)
 		{
-
+			cliente.Id = buscar_id();
 			SqlCommand cmd = new SqlCommand();
 
 			cmd.Connection = objConexao.ObjetoConexao;
-			cmd.CommandText = "insert into cliente (nome, cnpj, data_cadastro) values " +
+			cmd.CommandText = "insert into cliente (id_cliente,nome, cnpj, data_cadastro) values " +
 				"(@nome, @cnpj, @data_cadastro);";
 			cmd.Parameters.AddWithValue("@nome", cliente.NomeCliente);
 			cmd.Parameters.AddWithValue("@cnpj", cliente.Cnpj);
 			cmd.Parameters.AddWithValue("@data_cadastro", cliente.DataCadastro);
+			cmd.Parameters.AddWithValue("@id_cliente", cliente.Id);
 			objConexao.Conectar();
 			cmd.ExecuteScalar();
 			objConexao.Desconectar();
 
+		}
+
+		//Autor: Felipe Verbanek
+		//Data: 06/03/2019
+		//Return last client code
+		private int buscar_id()
+		{
+			int id;
+			
+			String sql = @"select max(id_cliente) as id from cliente";
+			SqlCommand cmd = new SqlCommand();
+			cmd.Connection = objConexao.ObjetoConexao;
+			cmd.CommandText = sql;
+			this.objConexao.Conectar();
+
+			SqlDataReader r = cmd.ExecuteReader();
+			r.Read();
+			id = r.GetInt32(r.GetOrdinal("id"));
+			id += 1;
+			objConexao.Desconectar();
+			return id;
 		}
 
 
